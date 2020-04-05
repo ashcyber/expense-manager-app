@@ -5,13 +5,14 @@ import {
     SET_END_DATE, 
     SET_TEXT_FILTER
 } from '../actions/types'
+import moment from 'moment';
 
 
 const filterReducerDefaultState = {
     text: '', 
     sortBy: 'date', 
-    startDate: undefined, 
-    endDate: undefined
+    startDate: moment().startOf('month'), 
+    endDate: moment().endOf('month')
 }; 
 
 const filtersReducer = (state = filterReducerDefaultState, action ) => {
