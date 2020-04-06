@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --watch", 
-    "test": "jest"
+    "dev": "webpack-dev-server --watch",
+    "test": "jest --config=jest.config.json"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,12 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
+    "array-filter": "^1.0.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^3.4.2",
+    "express": "^4.17.1",
+    "jsdom": "^15.2.1",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
@@ -40,9 +43,14 @@
     "uuid": "^7.0.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "ws": "^7.2.3"
   },
   "devDependencies": {
-    "jest": "^25.2.7"
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "jest": "^25.2.7",
+    "react-test-renderer": "^16.13.1"
   }
 }

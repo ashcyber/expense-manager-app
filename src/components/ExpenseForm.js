@@ -1,13 +1,10 @@
 import React from 'react';
 import moment from 'moment'; 
 import 'react-dates/initialize'; 
-import { SingleDatePicker } from 'react-dates'; import 'react-dates/lib/css/_datepicker.css';
-import 'react-dates/lib/css/_datepicker.css';
-import {connect} from 'react-redux'; 
-import {addExpense, editExpense} from '../redux/actions/expenseActions'; 
+import { SingleDatePicker } from 'react-dates'; 
 
 const now = moment(); 
-class ExpenseForm extends React.Component {
+export class ExpenseForm extends React.Component {
     constructor(props){ 
         super()
         this.state = {
@@ -62,7 +59,7 @@ class ExpenseForm extends React.Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={(e) => this.handleAddExpense(e)}>
                     <input
                         type="text"
                         placeholder="Description"
@@ -95,7 +92,7 @@ class ExpenseForm extends React.Component {
                         name="note"
                     >
                     </textarea>
-                    <button onClick={(e) => this.handleAddExpense(e)}>Save Expense</button>
+                    <button type="submit">Save Expense</button>
                     <pre>{JSON.stringify(this.props.expenses, 0, 2)}</pre>
                 </form>
             </div>
@@ -103,4 +100,4 @@ class ExpenseForm extends React.Component {
     }
 }
 
-export default connect()(ExpenseForm); 
+export default ExpenseForm; 
