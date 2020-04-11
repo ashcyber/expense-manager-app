@@ -5,8 +5,8 @@ import ExpenseListItem from './ExpenseListItem';
 
 
 export const ExpenseList  = (props) => (
-    <div>
-        <h2>Expense List</h2>
+    <div className="expense-list-box">
+        <h2 className="expense-list-header">Expense List</h2>
 
         {
             props.expenses.length === 0 ? (

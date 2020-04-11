@@ -6,7 +6,6 @@ import ExpenseForm from './ExpenseForm';
 const EditExpensePage = (props) => {
     return (
         <div>
-            <h1>Edit Expense Page</h1>
             <ExpenseForm expense={props.expense} onSubmit={(id,values) => {
                 props.dispatch(startEditExpense(id, values)); 
                 props.history.push('/'); 

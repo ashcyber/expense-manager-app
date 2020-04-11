@@ -14,12 +14,14 @@ const ExpenseListItem = (props) =>{
     }
 
     return (
-        <div>
-            <Link to={`/edit/${props.id}`}>
-                <h3>{props.description}</h3>
-            </Link>           
+        <div className="expense-item">
+            <h3>{props.description}</h3>
             <p>{numeral(props.amount).format('$0,0.00')} - {moment(props.createdAt).format("Do MMM YYYY") }</p>
-            <button onClick={() => handleRemove()}>Remove</button>
+            <Link to={`/edit/${props.id}`}>
+                <button className="edit-btn">Edit</button>
+            </Link>
+            <button onClick={() => handleRemove()} className="remove-btn">Remove</button>
+            
         </div>
     )
 }

@@ -1,0 +1,39 @@
+.box-layout {
+    background-image: url('/images/budget.png');
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    box-shadow:inset 0 0 0 2000px rgba(221, 0, 0, 0.2);
+}
+
+.box-login { 
+    position: absolute;
+    background-color: $blue;
+    text-align: center;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    top: 25%;
+    padding: 100px 100px 100px 100px; 
+    width: 500px;
+}
+
+.btn-login {
+    background-color: $red;
+    border: 0;
+    color: white;
+    width: 100px;
+    padding:10px;
+    border-radius: 5px;
+}
+
+.main-text { 
+    color: white; 
+}
+
+.sub-text { 
+    color: whitesmoke; 
+}

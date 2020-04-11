@@ -38,28 +38,36 @@ class ExpenseListFilters extends React.Component {
 
     render() {
         return (
-            <div>
-                <input type="text" 
-                    value={this.props.filters.text} 
-                    onChange={e => this.handleTextChange(e)}
-                />
-                <select onChange={(e) => this.handleSortByChange(e)}>
-                    <option value='date'>Date</option>
-                    <option value='amount'>Amount</option>
-                </select>
+            <div className="filter-box">
+                <div className="filter-box_item">
+                    <input type="text" 
+                        value={this.props.filters.text} 
+                        onChange={e => this.handleTextChange(e)}
+                        className="text-input"
+                    />
+                </div>
+                <div className="filter-box_item">
+                    <select onChange={(e) => this.handleSortByChange(e)} className="date-input">
+                        <option value='date'>Date</option>
+                        <option value='amount'>Amount</option>
+                    </select>
+                </div>
 
-                <DateRangePicker
-                    startDate={this.props.filters.startDate} // momentPropTypes.momentObj or null,
-                    startDateId="id_startDate" // PropTypes.string.isRequired,
-                    endDate={this.props.filters.endDate} // momentPropTypes.momentObj or null,
-                    endDateId="id_endDate" // PropTypes.string.isRequired,
-                    onDatesChange={({ startDate, endDate }) => this.handleDateChange(startDate, endDate)} // PropTypes.func.isRequired,
-                    focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                    onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-                    numberOfMonths={1}
-                    isOutsideRange={() => false}
-                    showClearDates={true}
-                />
+                <div className="filter-box_item">
+                    <DateRangePicker
+                        startDate={this.props.filters.startDate} // momentPropTypes.momentObj or null,
+                        startDateId="id_startDate" // PropTypes.string.isRequired,
+                        endDate={this.props.filters.endDate} // momentPropTypes.momentObj or null,
+                        endDateId="id_endDate" // PropTypes.string.isRequired,
+                        onDatesChange={({ startDate, endDate }) => this.handleDateChange(startDate, endDate)} // PropTypes.func.isRequired,
+                        focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                        onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                        numberOfMonths={1}
+                        isOutsideRange={() => false}
+                        showClearDates={true}
+                    />
+                </div>
+
             </div>
         )
     }

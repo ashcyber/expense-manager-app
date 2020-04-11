@@ -1,3 +1,68 @@
 @import './base/settings';
 @import './base/base';
+@import './components/box-layout'; 
+@import './components/dashboard-layout'; 
+* {
+    box-sizing: border-box;
+}
+body,html{
+    margin-top: 0px;
+}
 
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: $l-size;
+    .text-input-form { 
+        height: 50px;
+        padding: $s-size; 
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .SingleDatePicker { 
+        margin-bottom: 20px;
+    } 
+
+    .SingleDatePickerInput__withBorder, .DateInput {
+        width: 100%;
+    } 
+
+    .save-expenses {
+        background-color: $green;
+        border: 0;
+        padding: 20px;
+        width: 200px;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+
+
+.expense-list-box { 
+    margin: $l-size;
+
+    .expense-item { 
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+        padding: $m-size; 
+        button { 
+            margin-right: 20px;
+            height: 30px;
+            border: 0; 
+            padding: 20px; 
+            text-align: center;
+            line-height: 0;
+            color: white; 
+            font-weight: bold;
+        }
+
+        .edit-btn { 
+            background-color: gray;
+        }
+        .remove-btn  {
+            background-color: $red;
+        }
+    }
+}
