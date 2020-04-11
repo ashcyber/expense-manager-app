@@ -93,7 +93,6 @@ export class ExpenseForm extends React.Component {
                     >
                     </textarea>
                     <button type="submit">Save Expense</button>
-                    <pre>{JSON.stringify(this.props.expenses, 0, 2)}</pre>
                 </form>
             </div>
         )

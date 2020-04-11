@@ -10,3 +10,7 @@ export const SORT_BY_DATE = 'SORT_BY_DATE';
 export const SET_START_DATE = 'SET_START_DATE'; 
 export const SET_END_DATE = 'SET_END_DATE'; 
 export const SET_EXPENSES = 'SET_EXPENSES'; 
+
+export const LOGIN = 'LOGIN'; 
+export const LOGOUT = 'LOGOUT'; 
+
