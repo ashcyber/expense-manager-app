@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';  
 import {
-    removeExpense
+    startRemoveExpense
 } from '../redux/actions/expenseActions'
 import { Link } from 'react-router-dom';
 import moment from 'moment';
@@ -10,7 +10,7 @@ import numeral from 'numeral';
 const ExpenseListItem = (props) =>{
    
     const handleRemove = () => {  
-        props.dispatch(removeExpense(props.id)); 
+        props.dispatch(startRemoveExpense(props.id)); 
     }
 
     return (

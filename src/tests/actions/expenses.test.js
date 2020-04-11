@@ -1,9 +1,17 @@
 import {
+    startAddExpense, 
     addExpense, 
     editExpense, 
-    removeExpense 
+    removeExpense,  
+    setExpenses
 }
 from '../../redux/actions/expenseActions'; 
+import expenses from '../fixtures/expense'; 
+import thunk from 'redux-thunk'; 
+import configureStore from 'redux-mock-store'; 
+import database from '../../firebase/firebase'; 
+
+const createMockStore = configureStore([thunk]); 
 
 test('should setup remove expense action', () => {
     const action = removeExpense('123abc'); 
@@ -43,29 +51,49 @@ test('should setup add action object with provided value', () => {
 
 
     const action = addExpense(expenseData)
-
     expect(action).toEqual({
         type: 'ADD_EXPENSE', 
         expense: {
-            id: expect.any(String), 
             ...expenseData
         }
     }) 
 })
-
 
 test('should setup add action object with default values', () => {
     const action = addExpense({}); 
 
     expect(action).toEqual({
         type: 'ADD_EXPENSE', 
-        expense: {
-            id: expect.any(String),
-            description: '',
-            note: '', 
-            amount: 0, 
-            createdAt: 0
-        }
+        expense: {}
     })
-
 })
+
+
+test('should setup setExpenses action object', () => { 
+    const action = setExpenses(expenses); 
+    expect(action).toEqual({
+        type: 'SET_EXPENSES', 
+        expenses
+    })
+})
+
+
+// test('should add expense to database and store', (done) => {
+//     const store = createMockStore({}); 
+//     const expenseData = {
+//         description: 'bill', 
+//         amount: 1000, 
+//         note: 'This one is a value', 
+//         createdAt: 1000 
+//     }
+//     store.dispatch(startAddExpense(expenseData)).then(() => {
+//         const actions = store.getActions(); 
+//         expect(actions[0]).toEqual({
+//             type: 'ADD_EXPENSE', 
+//             expense: {
+//                 id: expect.any(String), 
+//                 ...expenseData
+//             }
+//         })
+//     })
+// })
