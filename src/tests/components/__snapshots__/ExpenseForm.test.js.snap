@@ -126,7 +126,6 @@ exports[`should render ExpenseForm correctly 1`] = `
     >
       Save Expense
     </button>
-    <pre />
   </form>
 </div>
 `;
@@ -257,7 +256,6 @@ exports[`should render ExpenseForm with expense data 1`] = `
     >
       Save Expense
     </button>
-    <pre />
   </form>
 </div>
 `;
@@ -388,7 +386,6 @@ exports[`should render error for invalid form 1`] = `
     >
       Save Expense
     </button>
-    <pre />
   </form>
 </div>
 `;

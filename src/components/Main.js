@@ -4,11 +4,9 @@ import {
     Route, 
     Switch,
 } from 'react-router-dom'; 
-import Header from './Header'; 
 import ExpenseDashboardPage from './ExpenseDashboardPage';
 import AddExpensePage from './AddExpensePage';
 import EditExpensePage from './EditExpensePage';
-import HelpPage from './HelpPage';
 import NotFoundPage from './NotFoundPage';
 import Login from './Login';
 import {createBrowserHistory} from 'history'
